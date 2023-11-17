@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>christams</title>
+    <title>christmas</title>
 </head>
 <body>
     Happy Jamhuri day
     <p>Enter the name of the person you want us to wish for you:</p>
-    <input type="text" placeholder="full name">
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="full name">
+        <input type="submit" value="Send">
+    </form>
+   
 </body>
 </html>
