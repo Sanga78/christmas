@@ -10,7 +10,7 @@
     <p>Enter the name of the person you want us to wish for you:</p>
     <form method="post">
         {% csrf_token %}
-        <input type="text" placeholder="full name">
+        <input type="text" placeholder="full name" name="name">
         <input type="submit" value="Send">
     </form>
    
