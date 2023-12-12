@@ -1,23 +1,48 @@
-<!DOCTYPE html>
+{% load static %}
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>message</title>
-</head>
-<body>
-    <div class="body">
-        hello 
-        you have a message click her to view
-        <input type="button" value="click here">
-        <p>
-            "Happy Jamhuri Day🥳🥳! 🇰🇪 On this special day of independence,
-             may your heart be filled with joy, pride, and gratitude for the beautiful nation of Kenya ☺️.
-             Wishing you a day surrounded by love, unity, and the warmth of cherished moments. 
-             Let's celebrate the spirit of freedom and progress together. 
-             Cheers to a bright and prosperous future for our beloved country! 🌟 #JamhuriDay 
-             #KenyaAt58"
-        </p>
-    </div>
-</body>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta charset="UTF-8">
+		<title>christmas</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/format.css' %}">
+		<style>
+			h3{
+				color: #FFDF00;
+			}
+			span{
+				color: rgb(0, 238, 255);
+			}
+		</style>
+	</head>
+
+	<body style="margin:0px">
+		<audio autoplay loop>
+			<source src="{% static 'music/music.mp3' %}" type="audio/mp3">
+			Your browser does not support the audio.
+		</audio>
+		<canvas></canvas>
+		<div id="content">
+			<h2 id="together">Countdown to christmas</h2>
+			<div id="timer">
+				<b id="d"></b> Days 
+				<b id="h"></b> Hours
+				<b id="m"></b> Minutes
+				<b id="s"></b> Seconds
+			</div>
+			<center><h3><span>From:</span> {{user.username}}</h3></center>
+		</div>
+    	<div id = "typeDiv">
+        	<span id="txt1"></span> <br />
+        	<span id="txt2"></span>
+    	</div>		
+		<script >
+			var ok = 0;
+			var flag = 1;
+			var t = 0;
+		</script>
+		<script type="text/javascript" src="{% static 'js/stars.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/date.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/typeWriter.js' %}"></script>
+	</body>
 </html>
