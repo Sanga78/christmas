@@ -18,10 +18,16 @@
 
 	<body style="margin:0px">
 		<audio autoplay loop>
-			<source src="{% static 'music/music.mp3' %}" type="audio/mp3">
+			<source src="{% static 'music/audio.mp3' %}" type="audio/mp3">
 			Your browser does not support the audio.
 		</audio>
 		<canvas></canvas>
+		<div id="heartTxt">
+			<span id="clickMe">Send</span>
+			<div id="heart">
+				<a href="{% url 'index' %}"><button id="button"></button> </a>
+			</div>
+		</div>
 		<div id="content">
 			<h2 id="together">Countdown to christmas</h2>
 			<div id="timer">
