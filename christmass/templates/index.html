@@ -7,11 +7,12 @@
 </head>
 <body>
     Happy Jamhuri day
-    <p>Enter the name of the person you want us to wish for you:</p>
-    <form method="post">
+    <p>Enter the your name:</p>
+    <form method="post" action="{% url 'index' %}">
         {% csrf_token %}
-        <input type="text" placeholder="full name" name="name">
-        <input type="submit" value="Send">
+        <input type="text" placeholder="first name" name="first_name" required>
+        <input type="text" placeholder="last name" name="last_name" required>
+        <button type="submit">Send message</button>
     </form>
    
 </body>
