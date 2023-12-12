@@ -1,14 +1,30 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth.models import User
+from .models import CustomUser
+from .forms import NameForm
 # Create your views here.
+def message(request, username):
+    user = CustomUser.objects.get(username=username)
+
+    return render(request,'message.html',{'user':user})
+    
+
 def index(request):
-    return render(request,'index.html')
-def message(request):
+    form = NameForm(request.POST)
     if request.method == 'POST':
-        sender = request.POST['name']
-        if sender is not None:
-            user = User.objects.create_user(username=sender)
+        if form.is_valid():
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+
+            username = f"{first_name.capitalize()}.{last_name.lower()}"
+
+            user = CustomUser.objects.create_user(username=username,password=None)
+
+            user.first_name = first_name
+            user.last_name = last_name
+
             user.save()
-            return render(request,'message.html')
-    else:
-        return render(request,'index.html')
+
+            return redirect('message',username=username)
+        else:
+            form = NameForm()
+    return render(request,'index.html',{'form':form})
