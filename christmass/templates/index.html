@@ -1,19 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>christmas</title>
-</head>
-<body>
-    Happy Jamhuri day
-    <p>Enter the your name:</p>
+    <link rel="stylesheet" href="{% static 'css/static.css' %}" />
+  </head>
+  <body>
+    <h1>
+      <marquee behavior="slide" direction=""></marquee> HAPPY FESTIVE SEASON
+    </h1>
+    <h2>FILL IN THE FORM</h2>
     <form method="post" action="{% url 'index' %}">
-        {% csrf_token %}
-        <input type="text" placeholder="first name" name="first_name" required>
-        <input type="text" placeholder="last name" name="last_name" required>
-        <button type="submit">Send message</button>
+      {% csrf_token %}
+      <label for="">First Name:</label>
+      <input type="text" placeholder="first name" name="first_name" required />
+      <br />
+      <br />
+      <label for="">Last Name:</label>
+      <input type="text" placeholder="last name" name="last_name" required />
+      <br />
+      <br />
+      <button type="submit">Send message</button>
     </form>
-   
-</body>
+  </body>
+  <script type="text/javascript" src="{% static 'js/baloon.js' %}"></script>
 </html>

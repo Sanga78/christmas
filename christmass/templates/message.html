@@ -1,54 +1,67 @@
 {% load static %}
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		<meta charset="UTF-8">
-		<title>christmas</title>
-		<link rel="stylesheet" type="text/css" href="{% static 'css/format.css' %}">
-		<style>
-			h3{
-				color: #FFDF00;
-			}
-			span{
-				color: rgb(0, 238, 255);
-			}
-		</style>
-	</head>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta charset="UTF-8" />
+    <title>christmas</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/format.css' %}"
+    />
+    <style>
+      h3 {
+        color: #ffdf00;
+      }
+      span {
+        color: rgb(0, 238, 255);
+      }
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+    </style>
+  </head>
 
-	<body style="margin:0px">
-		<audio autoplay loop>
-			<source src="{% static 'music/audio.mp3' %}" type="audio/mp3">
-			Your browser does not support the audio.
-		</audio>
-		<canvas></canvas>
-		<div id="heartTxt">
-			<span id="clickMe">Send</span>
-			<div id="heart">
-				<a href="{% url 'index' %}"><button id="button"></button> </a>
-			</div>
-		</div>
-		<div id="content">
-			<h2 id="together">Countdown to christmas</h2>
-			<div id="timer">
-				<b id="d"></b> Days 
-				<b id="h"></b> Hours
-				<b id="m"></b> Minutes
-				<b id="s"></b> Seconds
-			</div>
-			<center><h3><span>From:</span> {{user.username}}</h3></center>
-		</div>
-    	<div id = "typeDiv">
-        	<span id="txt1"></span> <br />
-        	<span id="txt2"></span>
-    	</div>		
-		<script >
-			var ok = 0;
-			var flag = 1;
-			var t = 0;
-		</script>
-		<script type="text/javascript" src="{% static 'js/stars.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/date.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/typeWriter.js' %}"></script>
-	</body>
+  <body style="margin: 0px">
+    <audio autoplay loop>
+      <source src="{% static 'music/audio.mp3' %}" type="audio/mp3" />
+      Your browser does not support the audio.
+    </audio>
+
+    <div id="treeTxt">
+      <span id="clickMe">Click</span>
+      <div id="tree">
+        <a href="{% url 'index' %}"><button id="button"></button> </a>
+      </div>
+    </div>
+    <div id="content">
+      <h2 id="time">Countdown to christmas</h2>
+      <div id="timer">
+        <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes
+        <b id="s"></b> Seconds
+      </div>
+      <center>
+        <h3><span>From:</span> {{user.username}}</h3>
+      </center>
+    </div>
+    <div id="typeDiv">
+      <span id="txt1"></span> <br />
+      <span id="txt2"></span>
+    </div>
+    <script>
+      var ok = 0;
+      var flag = 1;
+      var t = 0;
+    </script>
+    <script type="text/javascript" src="{% static 'js/stars.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/date.js' %}"></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js/typeWriter.js' %}"
+    ></script>
+  </body>
 </html>

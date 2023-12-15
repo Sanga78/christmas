@@ -4,7 +4,7 @@ let text2 = `As the twinkling lights and festive spirit surround us,
 may your Christmas be a symphony of laughter, love, and shared moments.
 Wishing you joy that echoes through the holiday season and beyond. 
 Merry Christmas to you and your cherished ones! 🌟🎁🎄`
-let speed = 50;
+let speed = 100;
 
 function typeWriter(text, para){
 	if(ok == 2){
